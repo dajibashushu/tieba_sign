@@ -1,19 +1,17 @@
-// 百度贴吧自动签到脚本
-// 更新时间：2024年1月
-// 支持Quantumult X
-
-const cookieName = '百度贴吧'
-const cookieKey = 'tieba_cookie'
-const signURL = 'https://tieba.baidu.com'
-const tiebaListURL = 'http://tieba.baidu.com/mo/q/newmoindex'
-const signTiebaURL = 'https://tieba.baidu.com/sign/add'
+// ✅ 将你脚本的开头部分，修改成和下面这几行完全一样
+const cookieName = ‘百度贴吧‘
+const cookieKey = ‘tieba_cookie‘
+const signURL = ‘https://tieba.baidu.com‘
+const tiebaListURL = ‘http://tieba.baidu.com/mo/q/newmoindex‘
+const signTiebaURL = ‘https://tieba.baidu.com/sign/add‘
 
 let cookie = $prefs.valueForKey(cookieKey)
 let headers = {
-    'Cookie': cookie,
-    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1',
-    'Referer': 'https://tieba.baidu.com/'
+    ‘Cookie‘: cookie,
+    ‘User-Agent‘: ‘Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1‘,
+    ‘Referer‘: ‘https://tieba.baidu.com/‘
 }
+// ... 后面的代码保持不变
 
 if (!cookie) {
     $notify(cookieName, '未获取到Cookie', '请先配置百度贴吧Cookie')
@@ -166,4 +164,5 @@ function sleep(ms) {
 }
 
 // 执行主函数
+
 main()
